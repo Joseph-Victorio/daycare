@@ -15,10 +15,10 @@ export default function Footer() {
         <div>
           <h3 className="font-bold mb-3">MAFFNA MOSLEM KIDS DAYCARE</h3>
           <ul className="space-y-2 text-sm">
-            <li><a href="#" className="hover:underline">Tentang Kami</a></li>
+            <li><a href="/tentang-kami" className="hover:underline">Tentang Kami</a></li>
             <li><a href="#" className="hover:underline">Data Anak</a></li>
-            <li><a href="#" className="hover:underline">Galeri</a></li>
-            <li><a href="#" className="hover:underline">Review</a></li>
+            <li><a href="/galeri" className="hover:underline">Galeri</a></li>
+          
           </ul>
         </div>
 
