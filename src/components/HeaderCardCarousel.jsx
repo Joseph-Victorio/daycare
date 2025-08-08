@@ -39,19 +39,19 @@ const HeaderCardCarousel = () => {
           className='max-w-[330px] md:w-[300px] lg:w-[330px] h-[350px] border-2 border-primary rounded-[16px] p-4'>
           {/* IMG */}
           <div className='w-[250px]  mx-auto'>
-            <img src="/kategori/Paket Produk.png" alt="Paket Produk" className=' mx-auto w-full rounded-md' />
+            <img src="/kegiatan/dihukum.jpg" alt="Paket Produk" className=' mx-auto w-50 rounded-md' />
           </div>
           {/* CONTENT */}
           <div className='flex justify-between items-center'>
             <div className='mt-2'>
               {/* NAMA */}
               <p className='text-[24px] text-primary'>
-                Paket Produk
+                Produktif
               </p>
             
             </div>
             <a
-              href='/produk-list/Paket'
+              href='/penitipan'
               className='bg-primary p-3 rounded-full mt-5 active:bg-secondary hover:bg-secondary transition ease-in-out duration-300'>
               <img
                 src="/icons/diagonal arrow.svg"
@@ -69,7 +69,7 @@ const HeaderCardCarousel = () => {
           className='max-w-[330px] h-[350px] border-2 border-primary rounded-[16px] p-4'>
           {/* IMG */}
           <div className='w-[250px] mx-auto'>
-            <img src="" alt="" className='rounded-md' />
+            <img src="/kegiatan/makan.jpg" alt="" className='rounded-md' />
           </div>
           {/* CONTENT */}
           <div className='flex justify-between items-center'>
@@ -81,7 +81,7 @@ const HeaderCardCarousel = () => {
            
             </div>
             <a
-              href='/produk-list/lighting'
+              href='/penitipan'
               className='bg-primary p-3 rounded-full mt-5 active:bg-secondary hover:bg-secondary transition ease-in-out duration-300'>
               <img
                 src="/icons/diagonal arrow.svg"
@@ -99,7 +99,7 @@ const HeaderCardCarousel = () => {
           className='max-w-[330px] h-[350px] border-2 border-primary rounded-[16px] p-4'>
           {/* IMG */}
           <div className='w-[250px] mx-auto'>
-            <img src="/kategori/Kegiatan Kreatif.png" alt="Kegiatan Kreatif" className='rounded-md'/>
+            <img src="/kegiatan/minion2.jpg" alt="Kegiatan Kreatif" className='rounded-md'/>
           </div>
           {/* CONTENT */}
           <div className='flex justify-between items-center'>

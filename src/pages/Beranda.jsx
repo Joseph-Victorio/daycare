@@ -71,7 +71,7 @@ const Beranda = () => {
         </div>
         {/* KANAN */}
         <div className="sm:w-1/3  mx-auto">
-          <img src="" alt="gambar aktivitas anak.png" />
+          <img src="/kegiatan/minion2.jpg" alt="gambar aktivitas anak.png" />
         </div>
       </section>
       <FiturUnggulan/>

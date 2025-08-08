@@ -17,7 +17,7 @@ export default function TentangKami() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
-            <div className="w-full aspect-square border border-gray-400 rounded-lg bg-gray-200"></div>
+           <img src="/kegiatan/minion2.jpg" alt="" />
             <div>
               <h2 className="text-2xl font-bold">
                 Tentang{" "}

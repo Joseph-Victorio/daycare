@@ -6,6 +6,7 @@ import { IoMdCloseCircle } from "react-icons/io";
 
 import { useState } from "react";
 import Cart from "./Cart";
+import { FaWpforms } from "react-icons/fa";
 
 const Navbar = () => {
   let location = useLocation();
@@ -15,6 +16,10 @@ const Navbar = () => {
   const [Menu, setMenu] = useState(false);
   const handleMenuClick = () => {
     setMenu(!Menu);
+  };
+
+  const goForm = () => {
+    window.location.location = "/formulir";
   };
   return (
     <>
@@ -35,7 +40,9 @@ const Navbar = () => {
             <NavLink
               to="/"
               className={({ isActive }) =>
-                isActive ? "border-b-2 border-primary p-1" : " text-primary hover:border-b-2  hover:border-primary hover:p-1 ease-in-out duration-300  p-1"
+                isActive
+                  ? "border-b-2 border-primary p-1"
+                  : " text-primary hover:border-b-2  hover:border-primary hover:p-1 ease-in-out duration-300  p-1"
               }
             >
               Beranda
@@ -71,7 +78,7 @@ const Navbar = () => {
               Galeri
             </NavLink>
           </div>
-          <div className="text-[20px] flex gap-2">
+          <div className="text-[20px] flex gap-2 items-center">
             <div className="p-3 bg-white rounded-2xl">
               <a
                 href={`https://wa.me/6285138750174/`}
@@ -88,11 +95,9 @@ const Navbar = () => {
                 <p>Konsultasi</p>
               </a>
             </div>
-            <Cart
-              warna={"text-primary"}
-              bgAngka={"bg-primary"}
-              warnaAngka={"text-secondary"}
-            />
+            <a href="/formulir">
+              <FaWpforms className="text-4xl cursor-pointer hover:text-primary/80 duration-300 ease-in-out" />
+            </a>
           </div>
         </div>
       </nav>
@@ -104,11 +109,9 @@ const Navbar = () => {
         <img src="/logo/logoBiru.png" className="w-[70px]" alt="" />
 
         <div className="text-[20px] gap-2 flex">
-          <Cart
-            warna={"text-primary"}
-            bgAngka={"bg-primary"}
-            warnaAngka={"text-secondary"}
-          />
+          <a href="/formulir">
+            <FaWpforms className="text-4xl cursor-pointer hover:text-primary/80 duration-300 ease-in-out" />
+          </a>
           <a
             href={`https://wa.me/6285138750174`}
             target="blank"
