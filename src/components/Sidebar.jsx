@@ -59,7 +59,7 @@ export default function Sidebar() {
                     <span>Data Anak</span>
                   </div>
                 </a>
-                <a href="/admin/riwayat-pembayaran">
+                <a href="https://dashboard.sandbox.midtrans.com/beta/transactions">
                   <div className="flex items-center gap-2 py-2 px-3 rounded hover:bg-white/20 cursor-pointer transition">
                     <FaMoneyBillAlt />
                     <span>Riwayat Pembayaran</span>
@@ -94,7 +94,7 @@ export default function Sidebar() {
 
       {/* Bottom */}
       <div className="px-4">
-        <a href="/logout">
+        <a href="/login">
           <div className="flex items-center gap-2 py-2 px-3 rounded hover:bg-white/20 cursor-pointer transition">
             <FaSignOutAlt />
             <span>Keluar</span>
