@@ -10,6 +10,7 @@ import DataAnak from "./pages/admin/DataAnak"
 import PenitipanAdmin from "./pages/admin/PenitipanAdmin"
 import ReviewOrtuAdmin from "./pages/admin/ReviewOrtu"
 import GaleriAdmin from "./pages/admin/GaleriAdmin"
+import DashboardAdmin from "./pages/admin/Dashboard"
 
 function App() {
 
@@ -27,6 +28,7 @@ function App() {
       <Route path="/login" element={<Auth/>}/>
       <Route path="/register" element={<Auth/>}/>
 
+      <Route path="/admin/dashboard" element={<DashboardAdmin/>}/>
       <Route path="/admin/data-anak" element={<DataAnak/>}/>
       <Route path="/admin/tipe-penitipan" element={<PenitipanAdmin/>}/>
       <Route path="/admin/review-ortu" element={<ReviewOrtuAdmin/>}/>

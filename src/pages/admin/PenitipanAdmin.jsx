@@ -14,7 +14,7 @@ const PenitipanAdmin = () => {
   });
   const [editId, setEditId] = useState(null);
 
-  // Pagination
+
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 5;
 
@@ -64,7 +64,6 @@ const PenitipanAdmin = () => {
     fetchData();
   };
 
-  // Pagination logic
   const totalPages = Math.ceil(penitipan.length / itemsPerPage);
   const startIndex = (currentPage - 1) * itemsPerPage;
   const currentItems = penitipan.slice(startIndex, startIndex + itemsPerPage);
@@ -97,7 +96,7 @@ const PenitipanAdmin = () => {
                   <td className="p-2">
                     {item.umur_min} - {item.umur_max} tahun
                   </td>
-                  <td className="p-2">
+                  <td className="p-2 w-100">
                     <p className="line-clamp-2">{item.deskripsi}</p>
                   </td>
                   <td className="p-2 flex gap-2">
@@ -113,7 +112,7 @@ const PenitipanAdmin = () => {
             </tbody>
           </table>
 
-          {/* Pagination controls */}
+
           <div className="flex justify-center gap-2 py-4">
             <button
               onClick={() => setCurrentPage((p) => Math.max(p - 1, 1))}
@@ -143,7 +142,7 @@ const PenitipanAdmin = () => {
           </div>
         </div>
 
-        {/* Form Input */}
+      
         <h2 className="text-xl font-bold mt-10 mb-4">Tambah Tipe Penitipan</h2>
 
         <form

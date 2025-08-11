@@ -1,96 +1,63 @@
-import { MdOutlinePhoneEnabled } from "react-icons/md";
-
-import { Link, NavLink, useLocation } from "react-router-dom";
-
-import { IoMdCloseCircle } from "react-icons/io";
-
 import { useState } from "react";
-import Cart from "./Cart";
+import { Link, NavLink, useLocation } from "react-router-dom";
+import { MdOutlinePhoneEnabled } from "react-icons/md";
+import { IoMdCloseCircle } from "react-icons/io";
 import { FaWpforms } from "react-icons/fa";
+import { HiMenuAlt2 } from "react-icons/hi";
+
+const navLinks = [
+  { name: "Beranda", path: "/" },
+  { name: "Tentang Kami", path: "/tentang-kami" },
+  { name: "Tipe Penitipan", path: "/penitipan" },
+  { name: "Galeri", path: "/galeri" },
+];
 
 const Navbar = () => {
-  let location = useLocation();
-  let tentang = "/tentang-kami";
-  console.log(location);
+  const location = useLocation();
+  const [menuOpen, setMenuOpen] = useState(false);
+  const isTentangPage = location.pathname === "/tentang-kami";
 
-  const [Menu, setMenu] = useState(false);
-  const handleMenuClick = () => {
-    setMenu(!Menu);
-  };
+  const toggleMenu = () => setMenuOpen(!menuOpen);
 
-  const goForm = () => {
-    window.location.location = "/formulir";
-  };
   return (
     <>
+      {/* DESKTOP */}
       <nav
-        className={
-          location.pathname === tentang
-            ? "hidden sm:block  font-rhodium text-white "
-            : "hidden sm:block bg-background font-rhodium text-primary "
-        }
+        className={`hidden sm:block font-rhodium ${
+          isTentangPage ? "text-white" : "bg-background text-primary"
+        }`}
       >
-        {/* DESKTOP */}
-        <div className="sm:flex md:hidden lg:flex items-center justify-between sm:px-[50px] sm:py-[32px] ">
-          {/* LOGO */}
-          <div>
-            <img src="/logo_daycare.svg" alt="logo" className="w-[72px]" />
+        <div className="flex items-center justify-between px-8 py-6 max-w-screen-xl mx-auto">
+   
+          <img src="/logo_daycare.svg" alt="logo" className="w-[72px]" />
+
+          <div className="flex items-center gap-10 bg-white p-3 rounded-2xl text-[20px]">
+            {navLinks.map((link) => (
+              <NavLink
+                key={link.name}
+                to={link.path}
+                className={({ isActive }) =>
+                  isActive
+                    ? "border-b-2 border-primary p-1"
+                    : "hover:border-b-2 hover:border-primary p-1 ease-in-out duration-300"
+                }
+              >
+                {link.name}
+              </NavLink>
+            ))}
           </div>
-          <div className="flex items-center text-[20px] gap-10 bg-white p-3 rounded-2xl ">
-            <NavLink
-              to="/"
-              className={({ isActive }) =>
-                isActive
-                  ? "border-b-2 border-primary p-1"
-                  : " text-primary hover:border-b-2  hover:border-primary hover:p-1 ease-in-out duration-300  p-1"
-              }
-            >
-              Beranda
-            </NavLink>
-            <NavLink
-              to="/tentang-kami"
-              className={({ isActive }) =>
-                isActive
-                  ? "border-b-2 border-primary text-primary p-1"
-                  : "hover:border-b-2 text-primary hover:border-primary hover:p-1 ease-in-out duration-300 p-1"
-              }
-            >
-              Tentang Kami
-            </NavLink>
-            <NavLink
-              to="/penitipan"
-              className={({ isActive }) =>
-                isActive
-                  ? "border-b-2 border-primary text-primary  p-1"
-                  : "hover:border-b-2 text-primary hover:border-primary hover:p-1 ease-in-out duration-300 p-1"
-              }
-            >
-              Tipe Penitipan
-            </NavLink>
-            <NavLink
-              to="/galeri"
-              className={({ isActive }) =>
-                isActive
-                  ? "border-b-2 border-primary text-primary p-1"
-                  : "hover:border-b-2 text-primary hover:border-primary hover:p-1 ease-in-out duration-300  p-1"
-              }
-            >
-              Galeri
-            </NavLink>
-          </div>
-          <div className="text-[20px] flex gap-2 items-center">
-            <div className="p-3 bg-white rounded-2xl">
+
+        
+          <div className="flex items-center gap-3 text-[20px]">
+            <div className="bg-white p-3 rounded-2xl">
               <a
-                href={`https://wa.me/6285138750174/`}
-                target="blank"
-                className="flex gap-2 items-center"
+                href="https://wa.me/6285138750174/"
+                target="_blank"
+                rel="noreferrer"
+                className="flex items-center gap-2"
               >
                 <MdOutlinePhoneEnabled
-                  className={
-                    location.pathname === tentang
-                      ? "text-white"
-                      : "text-primary"
-                  }
+                  className={isTentangPage ? "text-white" : "text-primary"}
                 />
                 <p>Konsultasi</p>
               </a>
@@ -101,68 +68,65 @@ const Navbar = () => {
           </div>
         </div>
       </nav>
-      {/* MOBILE */}
-      <div className="p-5 sm:hidden md:flex lg:hidden flex items-center justify-between">
-        <button className="" onClick={handleMenuClick}>
-          <img src="/icons/menu-fries-left.svg" alt="" className="w-[30px]" />
-        </button>
-        <img src="/logo/logoBiru.png" className="w-[70px]" alt="" />
 
-        <div className="text-[20px] gap-2 flex">
+      {/* MOBILE NAVBAR */}
+      <div className="p-5 sm:hidden flex items-center justify-between w-full">
+        <button onClick={toggleMenu}>
+          <HiMenuAlt2 className="text-3xl text-primary" />
+        </button>
+        <img src="/logo_daycare.svg" alt="Logo" className="w-[70px]" />
+        <div className="flex items-center gap-3">
           <a href="/formulir">
-            <FaWpforms className="text-4xl cursor-pointer hover:text-primary/80 duration-300 ease-in-out" />
+            <FaWpforms className="text-3xl text-primary" />
           </a>
           <a
-            href={`https://wa.me/6285138750174`}
-            target="blank"
-            className="flex gap-2 items-center"
+            href="https://wa.me/6285138750174/"
+            target="_blank"
+            rel="noreferrer"
           >
-            <MdOutlinePhoneEnabled className="text-[30px] text-primary" />
+            <MdOutlinePhoneEnabled className="text-[28px] text-primary" />
           </a>
         </div>
       </div>
-      {Menu && (
-        <div className="p-5 gap-5 bg-background text-[32px] fixed top-0 left-0 z-50 w-screen h-screen transition text-primary">
-          <div className="flex flex-col justify-between relative top-[25vh] text-center">
-            <div className="flex flex-col gap-5">
+
+      {/* MOBILE MENU OVERLAY */}
+      {menuOpen && (
+        <div className="fixed inset-0 bg-background z-50 p-6 text-primary sm:hidden flex flex-col">
+          <div className="flex justify-end">
+            <button onClick={toggleMenu}>
+              <IoMdCloseCircle className="text-4xl" />
+            </button>
+          </div>
+
+          <div className="mt-10 flex flex-col text-center space-y-6 text-2xl font-semibold">
+            {navLinks.map((link) => (
               <NavLink
-                to="/"
+                key={link.name}
+                to={link.path}
                 className={({ isActive }) =>
-                  isActive ? "border-b-2 border-primary p-1" : "text-primary"
+                  isActive ? "border-b-2 border-primary" : ""
                 }
+                onClick={toggleMenu}
               >
-                Beranda
+                {link.name}
               </NavLink>
-              <NavLink
-                to="/tentang-kami"
-                className={({ isActive }) =>
-                  isActive ? "border-b-2 border-primary p-1" : "text-primary"
-                }
-              >
-                Tentang Kami
-              </NavLink>
-              <NavLink
-                to="/produk"
-                className={({ isActive }) =>
-                  isActive ? "border-b-2 border-primary p-1" : "text-primary"
-                }
-              >
-                Produk
-              </NavLink>
-              <NavLink
-                to="/informasi"
-                className={({ isActive }) =>
-                  isActive ? "border-b-2 border-primary p-1" : "text-primary"
-                }
-              >
-                Informasi
-              </NavLink>
-            </div>
-            <div className="mx-auto ">
-              <button onClick={handleMenuClick} className="mx-auto">
-                <IoMdCloseCircle className="fixed bottom-5" />
-              </button>
-            </div>
+            ))}
+          </div>
+
+          <div className="mt-12 mx-auto text-center">
+            <a
+              href="https://wa.me/6285138750174/"
+              target="_blank"
+              rel="noreferrer"
+              className="block mt-4"
+            >
+              <MdOutlinePhoneEnabled className="text-2xl mx-auto mb-1" />
+              <p className="text-sm">Konsultasi</p>
+            </a>
+            <a href="/formulir" className="block mt-4">
+              <FaWpforms className="text-2xl mx-auto" />
+              <p className="text-sm">Formulir</p>
+            </a>
           </div>
         </div>
       )}
