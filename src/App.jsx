@@ -11,6 +11,8 @@ import PenitipanAdmin from "./pages/admin/PenitipanAdmin"
 import ReviewOrtuAdmin from "./pages/admin/ReviewOrtu"
 import GaleriAdmin from "./pages/admin/GaleriAdmin"
 import DashboardAdmin from "./pages/admin/Dashboard"
+import LaporanHarian from "./pages/LaporanHarian"
+import LaporanHarianAdmin from "./pages/admin/LaporanHarianAdmin"
 
 function App() {
 
@@ -22,6 +24,7 @@ function App() {
       <Route path="/formulir" element={<Formulir/>}/>
       <Route path="/galeri" element={<Galeri/>}/>
       <Route path="/tentang-kami" element={<TentangKami/>}/>
+      <Route path="/laporan-harian" element={<LaporanHarian/>}/>
       <Route path="/penitipan" element={<Penitipan/>}/>
       <Route path="/penitipan/:id" element={<DetailPenitipan/>}/>
 
@@ -33,6 +36,7 @@ function App() {
       <Route path="/admin/tipe-penitipan" element={<PenitipanAdmin/>}/>
       <Route path="/admin/review-ortu" element={<ReviewOrtuAdmin/>}/>
       <Route path="/admin/galeri" element={<GaleriAdmin/>}/>
+      <Route path="/admin/laporan" element={<LaporanHarianAdmin/>}/>
 
       
      </Routes>

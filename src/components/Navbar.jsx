@@ -24,7 +24,7 @@ const Navbar = () => {
       {/* DESKTOP */}
       <nav
         className={`hidden sm:block font-rhodium ${
-          isTentangPage ? "text-white" : "bg-background text-primary"
+          isTentangPage ? "text-primary" : "bg-background text-primary"
         }`}
       >
         <div className="flex items-center justify-between px-8 py-6 max-w-screen-xl mx-auto">

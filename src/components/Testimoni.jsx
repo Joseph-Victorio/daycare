@@ -23,7 +23,11 @@ export default function Testimoni() {
               key={i}
               className="bg-gray-100 rounded-xl p-4 shadow-md flex flex-col items-center text-center"
             >
-              <img src={'http://daycare.test/'+item.foto} alt="" className="h-20 w-20 rounded-full"/>
+              <img
+                src={"http://daycare.test/" + item.foto}
+                alt=""
+                className="h-20 w-20 rounded-full"
+              />
               <h3 className="text-sm font-bold">{item.nama_ortu}</h3>
               <p className="text-xs text-gray-500">{item.anak_dari}</p>
 
@@ -32,7 +36,7 @@ export default function Testimoni() {
                   idx < item.rating ? (
                     <FaStar key={idx} />
                   ) : (
-                    <FaRegStar key={idx} />
+                    <FaStar key={idx} />
                   )
                 )}
               </div>

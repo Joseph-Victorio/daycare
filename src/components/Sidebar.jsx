@@ -10,7 +10,9 @@ import {
   FaPlusCircle,
   FaBars,
   FaTimes,
+ 
 } from "react-icons/fa";
+import { BiSolidReport } from "react-icons/bi";
 import { RiDatabase2Fill } from "react-icons/ri";
 
 export default function Sidebar() {
@@ -69,6 +71,12 @@ export default function Sidebar() {
                 </div>
                 {openMenu === "kelola" && (
                   <div className="pl-8">
+                    <a href="/admin/laporan">
+                      <div className="flex items-center gap-2 py-2 px-3 rounded hover:bg-white/20 cursor-pointer transition">
+                        <BiSolidReport />
+                        <span>Laporan Harian</span>
+                      </div>
+                    </a>
                     <a href="/admin/data-anak">
                       <div className="flex items-center gap-2 py-2 px-3 rounded hover:bg-white/20 cursor-pointer transition">
                         <FaChild />

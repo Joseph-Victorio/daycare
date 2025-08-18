@@ -15,7 +15,7 @@ const Beranda = () => {
       {/* SECTION: HEADER */}
       <section className="flex flex-col-reverse md:flex-row items-center justify-between px-5 py-10 gap-10">
         {/* LEFT */}
-        <div className="md:w-1/2 w-full">
+        <div className="md:w-1/2 w-full flex-1">
           <h1 className="text-4xl sm:text-5xl text-primary font-bold leading-tight">
             MAFFNA MOSLEM <br /> KIDS DAYCARE
           </h1>
@@ -23,7 +23,7 @@ const Beranda = () => {
             Di MAFFNA Moslem Kids Daycare, kami menghadirkan layanan pengasuhan anak berbasis nilai-nilai Islam. Anak-anak tidak hanya diajarkan kemandirian dan kreativitas, tapi juga dibiasakan dengan kegiatan harian seperti doa, adab, dan belajar Al-Qur'an sejak dini. Lingkungan kami aman, nyaman, dan penuh cinta.
           </p>
           <Link
-            to="/produk"
+            to="/penitipan"
             className="bg-gradient-to-t from-primary to-secondary rounded-full text-white px-6 py-3 inline-flex items-center text-lg mt-6 hover:opacity-90 transition duration-300"
           >
             <span className="mx-auto">Daftar Sekarang</span>
@@ -50,20 +50,6 @@ const Beranda = () => {
             Platform digital terintegrasi untuk mengawasi perkembangan anak dan aktivitas harian di MAFFNA MOSLEM KID DAYCARE dengan mudah dan real-time.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 mt-6">
-            <Link
-              to="/login"
-              className="bg-gradient-to-t from-primary to-secondary rounded-full text-white px-6 py-3 text-center text-lg hover:opacity-90 transition"
-            >
-              Masuk
-            </Link>
-            <Link
-              to="/daftar"
-              className="bg-white border border-primary text-primary rounded-full px-6 py-3 text-center text-lg hover:bg-gray-100 transition"
-            >
-              Daftar
-            </Link>
-          </div>
         </div>
 
         {/* RIGHT */}
